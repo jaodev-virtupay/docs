@@ -1,0 +1,132 @@
+---
+title: 'Movies'
+description: 'Endpoints for managing and synchronizing movies'
+---
+
+# Movie Management
+
+Endpoints for managing movies and synchronizing with TheMoviesDB.
+
+## Sync Movies
+
+Synchronize multiple movies from TheMoviesDB with the local database.
+
+### Request
+
+```bash
+POST /api/movies/sync
+```
+
+### Request Body
+
+<ParamField body="SyncMoviesRequest" type="object">
+  <Expandable title="Properties">
+    <ParamField body="movieIds" type="array" required>
+      Array of TheMoviesDB movie IDs to sync
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the sync operation results
+</ResponseField>
+
+## Sync Single Movie
+
+Synchronize a single movie from TheMoviesDB.
+
+```bash
+GET /api/movies/sync/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  TheMoviesDB movie ID
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the synchronized movie details
+</ResponseField>
+
+## Get Movie by ID
+
+Retrieve a specific movie by its ID.
+
+```bash
+GET /api/movies/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="integer" required>
+  The ID of the movie
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the movie details
+</ResponseField>
+
+## Activate Movies
+
+Activate multiple movies.
+
+```bash
+PUT /api/movies/activate
+```
+
+### Request Body
+
+<ParamField body="MoviesRequest" type="object">
+  <Expandable title="Properties">
+    <ParamField body="movieIds" type="array" required>
+      Array of movie IDs to activate
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns success response
+</ResponseField>
+
+## Activate Single Movie
+
+Activate a single movie.
+
+```bash
+PUT /api/movies/activate/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="integer" required>
+  The ID of the movie to activate
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns success response
+</ResponseField>
+
+## Activate All Movies
+
+Activate all movies in the system.
+
+```bash
+PUT /api/movies/activate/all
+```
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns success response
+</ResponseField>

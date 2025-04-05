@@ -1,0 +1,140 @@
+---
+title: 'Genres'
+description: 'Endpoints for managing movie genres'
+---
+
+# Genre Management
+
+Endpoints for managing movie genres in the system.
+
+## List Genres
+
+Retrieve a paginated list of genres.
+
+### Request
+
+```bash
+GET /api/genres
+```
+
+### Query Parameters
+
+<ParamField query="genreName" type="string">
+  Filter genres by name
+</ParamField>
+
+<ParamField query="pageNumber" type="integer" default="1">
+  Page number for pagination
+</ParamField>
+
+<ParamField query="pageSize" type="integer" default="20">
+  Number of items per page
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns a paginated list of genres
+</ResponseField>
+
+## Get Genre by ID
+
+Retrieve a specific genre by its ID.
+
+```bash
+GET /api/genres/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="integer" required>
+  The ID of the genre
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the requested genre
+</ResponseField>
+
+## Create Genre
+
+Create a new genre.
+
+```bash
+POST /api/genres
+```
+
+### Request Body
+
+<ParamField body="Name" type="string" required>
+  Name of the genre
+</ParamField>
+
+<ParamField body="BackgroundImageUrl" type="string">
+  URL of the background image
+</ParamField>
+
+<ParamField body="BackgroundImageFile" type="file">
+  Background image file to upload
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the created genre
+</ResponseField>
+
+## Update Genre
+
+Update an existing genre.
+
+```bash
+PUT /api/genres/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="integer" required>
+  The ID of the genre to update
+</ParamField>
+
+### Request Body
+
+<ParamField body="Name" type="string">
+  Updated name of the genre
+</ParamField>
+
+<ParamField body="BackgroundImageUrl" type="string">
+  Updated URL of the background image
+</ParamField>
+
+<ParamField body="BackgroundImageFile" type="file">
+  New background image file to upload
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the updated genre
+</ResponseField>
+
+## Delete Genre
+
+Delete a genre.
+
+```bash
+DELETE /api/genres/{id}
+```
+
+### Path Parameters
+
+<ParamField path="id" type="integer" required>
+  The ID of the genre to delete
+</ParamField>
+
+### Response
+
+<ResponseField name="200: OK" type="object">
+  Returns the deleted genre
+</ResponseField>
