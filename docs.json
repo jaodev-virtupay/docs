@@ -38,18 +38,18 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Authentication",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/auth/login",
+              "api-reference/auth/register",
+              "api-reference/auth/two-factor",
+              "api-reference/auth/forgot-password"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "API Documentation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/introduction"
             ]
           }
         ]
