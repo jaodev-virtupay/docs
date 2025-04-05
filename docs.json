@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Cine API Endpoints",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,19 +11,8 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "API Reference",
-        "openapi": "https://cine-api.joaovitordev.pro/swagger/v1/swagger.json",
-        "groups": [
-          {
-            "group": "Authentication",
-            "pages": [
-              "api-reference/auth/login",
-              "api-reference/auth/register",
-              "api-reference/auth/two-factor",
-              "api-reference/auth/forgot-password"
-            ]
-          }
-        ]
+        "tab": "Cine Endpoints",
+        "openapi": "https://cine-api.joaovitordev.pro/swagger/v1/swagger.json"
       }
     ]
   },
@@ -32,12 +21,6 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
@@ -46,9 +29,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://www.linkedin.com/in/jaovitor"
     }
   }
 }
